@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<title>3BHotel</title>
+	<link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+<body>
+	<div id="app">
+		<div class="box">
+			<div class="header">
+				<a href="#" class="header_address">3BHotel</a>
+				<a href="#" class="header_form">
+					<input ／>
+				</a>
+				<a href="#" class="header_message">
+					<i class="fa fa-comment-o fa-lg"></i>
+				</a>
+			</div>
+			<div class="banner">
+				<div class="inner clearfix">
+	               <div class="innerwraper"><img src="img/banner1.jpg" alt="" /></div>
+	               <div class="innerwraper"><img src="img/banner2.jpg" alt="" /></div>
+	               <div class="innerwraper"><img src="img/banner3.jpg" alt="" /></div>
+	               <div class="innerwraper"><img src="img/banner4.jpg" alt="" /></div>
+	               <div class="innerwraper"><img src="img/banner1.jpg" alt="" /></div>
+	           </div>
+	           <div class="pagination">
+	               <span class="active"></span>
+	               <span></span>
+	               <span></span>
+	               <span></span>
+	           </div>
+			</div>
+			<div class="content">
+				<div>
+					<img src="./img/qh1.jpg"/>
+					<span>宁波清河店</span>
+				</div>
+				<div>
+					<img src="./img/ss1.jpg"/>
+					<span>余姚胜山店</span>
+				</div>
+				<div>
+					<img src="./img/sb1.jpg"/>
+					<span>萧山恒隆店</span>
+				</div>
+				<div>
+					<img src="./img/xs1.jpg"/>
+					<span>慈溪花苑店</span>
+				</div>
+			</div>
+			<div class="title">
+				<span>积分兑换</span>
+				<a href='more.html'><span>查看全部></span></a>
+			</div>
+			<div class="items" id='b'>
+				<div class="item">
+                    <a href='#'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>苹果8/7手机壳</p>
+						<p>品牌：国产</p>
+						<p>型号:nk65</p>
+						<p>上架时间:2018年3月16日</p>
+					</div>
+					<div class="item_right">
+						<span>1400</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='#'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>洁丽雅毛巾</p>
+						<p>品牌：洁丽雅</p>
+						<p>型号:jia2</p>
+						<p>上架时间:2018年3月16日</p>
+					</div>
+					<div class="item_right">
+						<span>1500</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='#'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>烧烤架</p>
+						<p>品牌：国产</p>
+						<p>型号:i86</p>
+						<p>上架时间:2018年03月16日</p>
+					</div>
+					<div class="item_right">
+						<span>4650</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='#'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>B仔公仔 小款</p>
+						<p>品牌：三碧酒店</p>
+						<p>型号:2C</p>
+						<p>上架时间:2018年03月16日</p>
+					</div>
+					<div class="item_right">
+						<span>800</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+			</div>
+		</div>
+        <div class='layer' style='display:none'>
+            <h3>请填写您的信息</h3>
+            <div class='frominput'>
+                <label>姓名</label>
+                <input type='text' class='inp' name='username' id='username'>
+            </div>
+            <div class='frominput'>
+                <label>手机</label>
+                <input type='text' class='inp' name='phone' id='phone'>
+            </div>
+            <div class='frominput'>
+                <label>地址</label>
+                <input type='text' class='inp' name='address' id='address'>
+            </div>
+            <p></p>
+            <p></p>
+            <button>提交</button>
+        </div>
+		<div class="footer">
+			<div class="footericon iconactive">
+				<a href='#' class="icon_a">
+					<i class="fa fa-home fa-lg"></i>
+                    <div>主页</div>
+				</a>
+			</div>
+			<div class="footericon">
+				<a href='login.html' class="icon_a">
+					<i class="fa fa-user-circle-o fa-lg"></i>
+                    <div>我的</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+    <script type='text/javascript'>
+        document.getElementById('b').addEventListener(
+            'click',function(){
+                document.querySelector('.layer').style.display='block';
+            }
+        );
+
+        document.querySelector('.layer button').addEventListener(
+            'click',function(){
+                document.querySelector('.layer').style.display='none';
+            }
+        );
+    </script>
+</body>
+</html>

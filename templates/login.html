@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block page_content %}
+    <form method='POST' action='/status'>
+        <div>帐号:<input name='username' type='text'></div>
+        <div>密码:<input name='password' type='text'></div>
+        <div><input value='登录' type='SUBMIT'></div>
+    </form>
+{% endblock %}

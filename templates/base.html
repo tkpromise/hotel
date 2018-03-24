@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel='stylesheet' type='text/css' href='{{url_for('static',filename='font-awesome/css/font-awesome.min.css')}}'>
+<link rel='stylesheet' href='{{url_for('static',filename='css/index.css')}}'>
+
+{% endblock %}
+
+{% block content %}
+    {% block page_content %}
+    {% endblock %}
+	<div class="footer">
+		<div class="footericon iconactive">
+			<a href='/' class="icon_a">
+				<i class="fa fa-home fa-lg"></i>
+                <div>主页</div>
+			</a>
+		</div>
+		<div class="footericon">
+			<a href='/login' class="icon_a">
+				<i class="fa fa-user-circle-o fa-lg"></i>
+                <div>我的</div>
+			</a>
+		</div>
+	</div>
+{% endblock %}
+{% block scripts %}
+    {{super() }}
+    <script src='static/js/index.js'></script>
+{% endblock %}
