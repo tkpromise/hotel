@@ -107,10 +107,66 @@ def hotel():
     password = request.form['password']
     x = gettext(username,password)
     if isinstance(x, dict):
-        return redirect(url_for('index'))
+        return redirect('/my')
     return render_template('login.html')
+
+@app.route('/my', methods=['GET', 'POST'])
+def my():
+	return render_template('my.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
+
+
+@app.route('/phonecase')
+def phonecase():
+	return render_template('phonecase.html')
+
+@app.route('/towel')
+def towel():
+	return render_template('towel.html')
+
+@app.route('/barbecue')
+def barbecue():
+	return render_template('barbecue.html')
+
+@app.route('/b')
+def b():
+	return render_template('b.html')
+
+
+@app.route('/qh78')
+def qh78():
+	return render_template('qh78.html')
+
+@app.route('/ss161')
+def ss161():
+	return render_template('ss161.html')
+
+@app.route('/sy688')
+def sy688():
+	return render_template('sy688.html')
+
+@app.route('/sb2085')
+def sb2086():
+	return render_template('sb2085.html')
+
+
+@app.route('/convert')
+def convert():
+	return render_template('convert.html')
+
+@app.route('/search4', methods=['POST'])
+def do_search() -> str:
+	name = request.form['name']
+	phone = request.form['phone']
+	address = request.form['address']
+	log_request(name, phone, address)
+	return str(name)
+
+def log_request(name, phone, address):
+	with open('vsearch.log', 'a') as log:
+		print(name, phone, address, file=log)
+

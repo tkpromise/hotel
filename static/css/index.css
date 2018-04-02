@@ -318,3 +318,64 @@ a {
     height: 24px;
 }
 
+.poto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.kala {
+	width: 1rem;
+	height: 1rem;
+	margin-top: 0.1rem;
+}
+
+.myinfo {
+	display: flex;
+	justify-content: space-around;
+	width:100%;
+	margin-top: 1rem;
+}
+
+.integral {
+	display: flex;
+	height: 100px;
+	width: 25%;
+}
+
+
+.store img {
+	width: 100%;
+	height: 100%;
+}
+.store figcaption {
+	font-size: 16px;
+	text-align: center;
+}
+.store p {
+	text-indent:28px;
+}
+
+
+.commodity img{
+	width: 100%;
+	height: 100%;
+}
+.commodity p {
+	margin: 0;
+}
+
+.storedesc {
+	display: flex;
+	flex-direction: column;
+}
+.storedesc img {
+	width: 100%;
+	height: 100%;
+}
+.storedesc p:first-child {
+	background-color: #f5f5f5;
+}
+.storedesc input {
+	margin-right: auto;
+}

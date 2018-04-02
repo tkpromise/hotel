@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<figure class='commodity'>
+	<img src='static/img/phonecase.jpg'>
+	<figcaption >iphone手机壳</figcaption>
+	<p>1800积分</p>
+	<p>市场参考价:128.00元</p>
+</figure>
+<hr>
+<div class='storedesc'>
+	<p>商品描述</p>
+	<p>品名：</p>
+	<p>品牌：</p>
+	<p>型号：</p>
+	<a href='/convert'>积分兑换</a>
+	<br>
+	<br>
+	<br>
+	<br>
+<div>
+{% endblock %}
