@@ -36,6 +36,17 @@ def gettext(username, password):
     text=client.service.MemberLoginJson(sCondition=username, sPassword=pswd)
     dic = json.loads(escape(text))
     return dic
+	
+def getintegral(username, password):
+    url = 'http://114.55.172.147:9701/MemberService.asmx?wsdl'
+    client = Client(url)
+    m = hashlib.md5(password.encode('utf-8'))
+    pswd = m.hexdigest()
+    text=client.service.MemberLoginJson(sCondition=username, sPassword=pswd)
+    dic = json.loads(escape(text))
+    mid = dic['MebID']
+    integeral = client.service.GetMemberPointSum(nMebID=mid)
+    return integeral
 
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -106,9 +117,12 @@ def hotel():
     username = request.form['username']
     password = request.form['password']
     x = gettext(username,password)
+    jifen = getintegral(username, password)
+    '''
     if isinstance(x, dict):
-        return redirect('/my')
-    return render_template('login.html')
+        return redirect('/my') 
+    '''
+    return render_template('my.html', the_in=jifen, username=username)
 
 @app.route('/my', methods=['GET', 'POST'])
 def my():
