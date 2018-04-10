@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Flasky{% endblock %}
-
 {% block page_content %}
 <form action='/search4' method='post'>
 	<div>
@@ -17,7 +15,7 @@
 	<label for='address'>地址：</label>
 	<input name='address' type='text' id='address'>
 	</div>
-	<input type='submit' value='Submit'>
+	<input type='submit' value='提交'>
 </form>
 
 {% endblock %}

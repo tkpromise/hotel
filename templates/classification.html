@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+        .FlexWrapper {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .FlexWrapper a {
+            text-decoration: none;
+        }
+
+        .FlexInner img {
+            width: 2.7rem;
+            height: 2.7rem;
+        }
+        .clsp {
+            border: 1px solid red;
+        }
+        .clsp > :first-child {
+            color: white;
+            background: red;
+            padding: 0 0.1rem;
+            margin: 0 0.1rem 0 0;
+        }
+        
+    </style>
+{% endblock %}
+
+
+{% block page_content %}
+    <div class='FlexWrapper'>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+    </div>
+
+    <div class='FlexWrapper'>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+    </div>
+
+    <div class='FlexWrapper'>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+        <a href='#' class='FlexInner'>
+            <img src="{{ url_for('static', filename='classimg/mrday.jpg') }}">
+            <div class='clsp'>
+                <span>积分:3000</span>
+                <span>定价:99元</span>
+            </div>
+        </a>
+    </div>
+    <br>
+    <br>
+    <br>
+<!--
+    <div class='FlexWrapper'>
+        <div class='FlexInner'>I am content in the inner Flexbox 1.</div>
+        <div class='FlexInner'>I am content in the inner Flexbox 2.</div>
+        <div class='FlexInner'>I am content in the inner Flexbox 3.</div>
+    </div>
+-->
+{% endblock %}

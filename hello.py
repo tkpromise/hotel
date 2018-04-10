@@ -118,6 +118,7 @@ def hotel():
     password = request.form['password']
     x = gettext(username,password)
     jifen = getintegral(username, password)
+    session['username'] = request.form['username']
     '''
     if isinstance(x, dict):
         return redirect('/my') 
@@ -178,9 +179,12 @@ def do_search() -> str:
 	phone = request.form['phone']
 	address = request.form['address']
 	log_request(name, phone, address)
-	return str(name)
+	return str('兑换成功')
 
 def log_request(name, phone, address):
 	with open('vsearch.log', 'a') as log:
 		print(name, phone, address, file=log)
 
+@app.route('/classification')
+def classification():
+	return render_template('classification.html')
