@@ -21,7 +21,7 @@ body{
 	display: flex;
 	align-items:center;
 	padding: 0 15px;
-	background: #ef1313;
+	background: #f0f0f0;
 }
 .banner{
 	height: 2.6rem;
@@ -69,11 +69,11 @@ body{
 }
 .header_address{
 	margin-right: 15px;
-	color: #fff;
+	color: #333;
 }
 .header_message{
 	margin-left: 15px;
-	color: #fff;
+	color: #333;
 }
 .header_form{
 	flex:1;

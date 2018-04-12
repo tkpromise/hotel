@@ -1,5 +1,6 @@
 import os
 import json
+import hashlib
 from flask import Flask, render_template, session, redirect, url_for,request
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
@@ -8,7 +9,6 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import hashlib
 from suds.client import Client
 from xml.sax.saxutils import escape
 
@@ -48,6 +48,11 @@ def getintegral(username, password):
     integeral = client.service.GetMemberPointSum(nMebID=mid)
     return integeral
 
+class NameForm(FlaskForm):
+    username = StringField('帐号', validators=[DataRequired()])
+    password = StringField('密码', validators=[DataRequired()])
+    submit = SubmitField('登录')
+
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -78,9 +83,6 @@ class Info(db.Model):
         return '<Info> %r>' % self.contacts
 
 
-class NameForm(FlaskForm):
-    name = StringField('What is your name?', validators=[DataRequired()])
-    submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):
     username = StringField('帐号', validators=[DataRequired()])
@@ -119,10 +121,8 @@ def hotel():
     x = gettext(username,password)
     jifen = getintegral(username, password)
     session['username'] = request.form['username']
-    '''
-    if isinstance(x, dict):
-        return redirect('/my') 
-    '''
+    if type(x) != dict:
+        return redirect(url_for('login'))
     return render_template('my.html', the_in=jifen, username=username)
 
 @app.route('/my', methods=['GET', 'POST'])
@@ -134,6 +134,17 @@ def my():
 def login():
     return render_template('login.html')
 
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    username = 'admin'
+    password = 'limit168'
+    form = NameForm()
+    if form.validate_on_submit():
+        if username != form.username.data or password != form.password.data:
+            session['user'] = form.username.data
+            session['pswd'] = form.username.data
+            return redirect('404')
+    return render_template('my.html', the_in='80')
 
 @app.route('/phonecase')
 def phonecase():
