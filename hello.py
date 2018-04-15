@@ -35,7 +35,10 @@ def gettext(username, password):
     print(pswd)
     text=client.service.MemberLoginJson(sCondition=username, sPassword=pswd)
     dic = json.loads(escape(text))
-    return dic
+    if isinstance(dic, dict):
+        return dic
+    else:
+        return 'None'
 	
 def getintegral(username, password):
     url = 'http://114.55.172.147:9701/MemberService.asmx?wsdl'
@@ -119,11 +122,16 @@ def hotel():
     username = request.form['username']
     password = request.form['password']
     x = gettext(username,password)
-    jifen = getintegral(username, password)
-    session['username'] = request.form['username']
     if type(x) != dict:
         return redirect(url_for('login'))
-    return render_template('my.html', the_in=jifen, username=username)
+    else:
+        jifen = getintegral(username, password)
+        return render_template('my.html', the_in=jifen, username=username)
+    '''
+    if isinstance(x, dict):
+    else:
+        return render_template('login.html')
+    '''
 
 @app.route('/my', methods=['GET', 'POST'])
 def my():

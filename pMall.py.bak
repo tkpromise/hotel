@@ -13,16 +13,21 @@ def gettext(username, password):
     print(username)
     print(pswd)
     text = ((client.service.MemberLoginJson(sCondition=username, sPassword=pswd)))
-    dic = json.loads(escape(text))
-    if isinstance(dic,dict):
-        print('good')
+    if text not None
+        dic = json.loads(escape(text))
+        print(dic)
     else:
-        print('fuck')
+        return None
 
 
 
 
 
-gettext('1986825', '1986825')
+x = gettext('1986825', '1986825')
+print(x)
 
+if isinstance(x,dict):
+    print('good')
+else:
+    print('fuck')
 

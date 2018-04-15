@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+        #login input {
+            height: 0.6rem;
+            margin: 0.2rem;
+        }
+
+
+    </style>
+{% endblock %}
+
 {% block page_content %}
+    <div class='poto'>
+        <img class='kala' src="{{ url_for('static', filename='kala.png') }}">
+    </div>
     <form method='POST' action='/status' id='login'>
         <div>帐号:<input name='username' type='text'></div>
         <div>密码:<input name='password' type='text'></div>
-        <div><input value='登录' type='SUBMIT'></div>
+        <div>
+            <input value='登录' type='SUBMIT' class='loginSubmit'>
+            <span><a href='http://m.3bhotel.com/Account/ResetPwd'> 忘记密码</a></span>
+        </div>
     </form>
 {% endblock %}
