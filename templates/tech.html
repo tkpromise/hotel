@@ -1,0 +1,151 @@
+<html>
+<head>
+    <style ref='stylesheet'>
+        .main {
+            width: 100%;
+            height: 100%;
+            background-color: #eb195f;
+        }
+        .logo {
+            color: white;
+            font-size: 0.24rem;
+        }
+        .random {
+            display:flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin:0.32rem 0.64rem;
+        }
+        .title {
+            border: 1px solid gray;
+            font-size: 0.32rem;
+            padding: 0 8px;
+        }
+        .cn {
+            font-size: 0.20rem;
+        }
+        .word {
+            border: 1px solid gray;
+            margin-top: 0.32rem;
+            padding: 0.08rem;
+            width: 8rem;
+            height: 2rem;
+            text-align: center;
+			font-size: 0.24rem;
+        }
+        button {
+            margin-top: 0.32rem;
+            width: 1rem;
+            height: 0.40rem;
+			background-color: #eb195f;
+			color: white;
+			font-size: 0.24rem;
+			border: 1px solid gray;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class='main'>
+    <div class='logo'>3BHotel</div>
+    <div class='random'>
+        <div class='title'>知识问答</div>
+        <div class='word' id='img'></div>
+        <button onclick='stop()'>暂停</button>    
+    </div>
+</div>
+</body>
+    <script>
+       	function showimg() {
+		var questions=[
+            '1、深夜，客人向总台投诉：隔壁住客很吵，影响其休息。应如何处理？',
+            '2、客人在大堂不小心摔倒怎么办？',
+            '3、客人要求与你合影留念时，应该怎么办？',
+            '4、办理入住登记发现可疑客人时怎么办？',
+            '5、成功推销客房的前提是什么？',
+            '6、客人拒绝交付押金时怎么办？',
+            '7、一客人来登记入住，说他是旅行社的客人，提前一天到达，所以未预定。当时酒店尚有空房，你将如何处理？',
+            '8、前厅部工作人员应注意的安全有哪些？',
+            '9、一位姓陈的非住客对你说，住在酒店的某客人欠了他许多钱，现陈先生无钱回香港，希望你帮忙查询及告知房号，以便他可把款追回，你如何处理陈先生的要求？',
+            '10、前台接待服务过程，酒店应就哪些责任事项向客人声明？',
+            '11、酒店一住客在退房时将一包物品交给你，要求你转交给他的朋友黄先生，并说黄先生明天会来取这包东西，你应如何处理？',
+            '12、推销房间时，直截了当地询问客人预想的消费价格是否妥当，为什么？',
+            '13、客人只持一个有效证件要求开多间房时怎么办？',
+            '14、客人到了退房日期仍未离开，总台服务员用如何操作?',
+            '15、客人反映送到房间的行李件数不符时怎么办？',
+            '16、客人要求酒店对退房时间进行变通时怎么办？',
+            '17、客人退房有些抱怨并要求打折时怎么办？',
+            '18、入住客人带宠物进酒店，如何处理?',
+            '19、访客要求告知保密客房或重要客人的房号，应如何处理？',
+            '20、客人行李寄存卡丢失怎么办？',
+            '21、酒店房间内的物品被客人拿走，这是常有的事。当发现某住客拿走了房间中比较贵重的物品（比如电视遥控器之类），而该客人正在前台收银处结帐离馆，你有什么办法既能让客人交出酒店之物品，使酒店不受损失，而又不至于使客人感到难堪？',
+            '22、曾经跑单的客人重新要求入住时怎么办？',
+            '23、客人来到酒店想办理住宿手续，但客房已满，他又没有预订，这时应如何处理？',
+            '24、客人入住预订房间，发现房间还未打扫好怎么办？',
+            '25、客人对房间价格不满意，提出种种理由要求享有较大的折扣时应如何处理？',
+            '26、一位客人以全价入住，在退房时说房价太贵，房间设备出现问题，且有异物，以至于影响他身体健康及睡眠，要求折扣收费怎么办？',
+            '27、不能向客人提供预订并已确认的房间时怎么办？',
+            '28、一客人在入住登记时，只出示了其中一位入住人的身份证件，而未出示另一位的证件，表示愿意交一大笔押金，酒店完全可以信任他。对此应如何处理？',
+            '29、客人咨询的问题无法及时答复时怎么办？',
+            '30、外地客人想在较短的时间内在酒店所在地游览一下，领略一下当地的风情，想得到你的指点，怎么办？',
+        ];
+		var url=questions[Math.floor(Math.random()*questions.length)];
+		document.getElementById('img').innerHTML=url;
+		console.log(url)
+	};
+	var i = setInterval('showimg()',120);
+	
+	function stop() {
+		window.clearInterval(i)
+	}; 
+        
+        // taobao UED 
+        (function flexible (window, document) {
+         var docEl = document.documentElement
+         var dpr = window.devicePixelRatio || 1
+
+         // adjust body font size
+         function setBodyFontSize () {
+           if (document.body) {
+             document.body.style.fontSize = (12 * dpr) + 'px'
+           }
+           else {
+             document.addEventListener('DOMContentLoaded', setBodyFontSize)
+           }
+         }
+         setBodyFontSize();
+
+         // set 1rem = viewWidth / 10
+         function setRemUnit () {
+           var rem = docEl.clientWidth / 10
+           docEl.style.fontSize = rem + 'px'
+         }
+
+         setRemUnit()
+
+         // reset rem unit on page resize
+         window.addEventListener('resize', setRemUnit)
+         window.addEventListener('pageshow', function (e) {
+           if (e.persisted) {
+             setRemUnit()
+           }
+         })
+
+         // detect 0.5px supports
+         if (dpr >= 2) {
+           var fakeBody = document.createElement('body')
+           var testElement = document.createElement('div')
+           testElement.style.border = '.5px solid transparent'
+           fakeBody.appendChild(testElement)
+           docEl.appendChild(fakeBody)
+           if (testElement.offsetHeight === 1) {
+             docEl.classList.add('hairlines')
+           }
+           docEl.removeChild(fakeBody)
+         }
+        } (window, document))
+    </script>
+</html>

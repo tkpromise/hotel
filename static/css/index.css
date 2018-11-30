@@ -13,7 +13,7 @@ body{
 .box{
 	margin: 0 auto;
 	max-width: 6.4rem;
-	padding-bottom: 70px;
+/*	padding-bottom: 70px; */
 	background: #f0f0f0;
 }
 .header{
@@ -123,7 +123,7 @@ body{
 	background-size:69% auto;
 }
 .items .item:nth-child(6) .item_left{
-	background: url("/../static/img/b.jpg") no-repeat top center;
+	background: url("/../static/img/smallB.jpg") no-repeat top center;
 	background-size:69% auto;
 }
 .items .item:nth-child(7) .item_left{
@@ -337,8 +337,8 @@ a {
 	justify-content: center;
 }
 .kala {
-	width: 0.8rem;
-	height: 0.8rem;
+	width: 0.9rem;
+	height: 0.9rem;
 	margin-top: 1.2rem;
 }
 

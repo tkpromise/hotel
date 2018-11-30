@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+        #cls10000 .item:nth-child(1) .item_left{
+	        background: url("/../static/comm/iphoneX.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(2) .item_left{
+	        background: url("/../static/comm/canon.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(3) .item_left{
+	        background: url("/../static/img/comm/XGIMIH1S.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(4) .item_left{
+	        background: url("/../static/img/comm/DYSONV8.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(5) .item_left{
+	        background: url("/../static/img/comm/howareyou.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(6) .item_left{
+	        background: url("/../static/img/comm/DW00100163.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(7) .item_left{
+	        background: url("/../static/img/comm/jomalone.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(8) .item_left{
+	        background: url("/../static/img/comm/Kanken Mini.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls10000 .item:nth-child(9) .item_left{
+	        background: url("/../static/img/comm/SONYWI-C400.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(1) .item_left{
+	        background: url("/../static/comm/ykoo.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(2) .item_left{
+	        background: url("/../static/comm/philips.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(3) .item_left{
+	        background: url("/../static/comm/life.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(4) .item_left{
+	        background: url("/../static/comm/ysh.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(5) .item_left{
+	        background: url("/../static/img/comm/Ryo.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls1000 .item:nth-child(6) .item_left{
+	        background: url("/../static/img/comm/Midea4000k.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+
+        #cls100 .item:nth-child(1) .item_left{
+	        background: url("/../static/comm/riwa.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls100 .item:nth-child(2) .item_left{
+	        background: url("/../static/img/bigB.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls100 .item:nth-child(3) .item_left{
+	        background: url("/../static/img/002.png") no-repeat top center;
+	        background-size:90% auto;
+        }
+        #cls100 .item:nth-child(4) .item_left{
+	        background: url("/../static/img/smallB.jpg") no-repeat top center;
+	        background-size:90% auto;
+        }       
+        
+    </style>
+{% endblock %}
+
+{% block page_content %}
+ 		<div class="box">
+			<div class="title">
+				<span>10000+</span>
+			</div>
+			<div class="items" id='cls10000'>
+				<div class="item">
+                    <a href='/phonecase'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>Apple iPhone X</p>
+						<p>品牌：Apple</p>
+						<p>型号：iPhone X</p>
+						<p>市场参考价:￥9688</p>
+					</div>
+					<div class="item_right">
+						<span>363300</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm2'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>单反相机</p>
+						<p>品牌：佳能</p>
+						<p>型号：80D</p>
+						<p>市场参考价：￥8399</p>
+					</div>
+					<div class="item_right">
+						<span>314963</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm23'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>投影仪</p>
+						<p>品牌：极米</p>
+						<p>型号：H1S</p>
+						<p>市场参考价：￥3999</p>
+					</div>
+					<div class="item_right">
+						<span>149963</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm24'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>吸尘器</p>
+						<p>品牌：戴森</p>
+						<p>型号：V8</p>
+						<p>市场参考价：￥3960</p>
+					</div>
+					<div class="item_right">
+						<span>148500</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm25'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>早教机</p>
+						<p>品牌：好儿优</p>
+						<p>型号：M1</p>
+						<p>市场参考价：￥2699</p>
+					</div>
+					<div class="item_right">
+						<span>101213</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm26'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>学生表</p>
+						<p>品牌：丹尼尔惠灵顿</p>
+						<p>型号：DW00100163</p>
+						<p>市场参考价：￥1229</p>
+					</div>
+					<div class="item_right">
+						<span>46088</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm27'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>女士香水</p>
+						<p>品牌：祖玛珑</p>
+						<p>型号：小苍兰</p>
+						<p>市场参考价：￥600</p>
+					</div>
+					<div class="item_right">
+						<span>22500</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm28'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>双肩背包</p>
+						<p>品牌：北极狐</p>
+						<p>型号：Kanken Mini</p>
+						<p>市场参考价：￥447</p>
+					</div>
+					<div class="item_right">
+						<span>16763</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm29'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>耳机</p>
+						<p>品牌：索尼</p>
+						<p>型号：WI-C400</p>
+						<p>市场参考价：￥429</p>
+					</div>
+					<div class="item_right">
+						<span>16088</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+
+			</div>
+		</div>
+ 		<div class="box">
+			<div class="title">
+				<span>1000+</span>
+			</div>
+			<div class="items" id='cls1000'>
+				<div class="item">
+                    <a href='/comm3'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>拉杆箱</p>
+						<p>品牌：意酷</p>
+						<p>型号：YK-1510</p>
+						<p>市场参考价:￥248</p>
+					</div>
+					<div class="item_right">
+						<span>9300</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+
+				<div class="item">
+                    <a href='/comm4'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>电动剃须刀</p>
+						<p>品牌：飞利浦</p>
+						<p>型号：RQ311</p>
+						<p>市场参考价：￥199</p>
+					</div>
+					<div class="item_right">
+						<span>4975</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm5'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>咖啡杯套装</p>
+						<p>品牌：乐享</p>
+						<p>型号：1670918</p>
+						<p>市场参考价：￥199</p>
+					</div>
+					<div class="item_right">
+						<span>4975</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm6'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>养生壶</p>
+						<p>品牌：荣事达</p>
+						<p>型号：YSH18Q</p>
+						<p>市场参考价：￥149</p>
+					</div>
+					<div class="item_right">
+						<span>7450</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm67'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>洗发水</p>
+						<p>品牌：吕</p>
+						<p>型号：红吕</p>
+						<p>市场参考价：￥108</p>
+					</div>
+					<div class="item_right">
+						<span>2720</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm68'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>护眼灯</p>
+						<p>品牌：美的</p>
+						<p>型号：4000k</p>
+						<p>市场参考价：￥99</p>
+					</div>
+					<div class="item_right">
+						<span>2475</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+			</div>
+		</div>
+
+ 		<div class="box">
+			<div class="title">
+				<span>100+</span>
+			</div>
+			<div class="items" id='cls100'>
+				<div class="item">
+                    <a href='/comm7'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>直发器</p>
+						<p>品牌：雷瓦</p>
+						<p>型号：RB-809S</p>
+						<p>市场参考价:￥40</p>
+					</div>
+					<div class="item_right">
+						<span>1000</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm8'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>B仔(大)</p>
+						<p>品牌：三碧酒店</p>
+						<p>型号：B1</p>
+						<p>市场参考价：￥36</p>
+					</div>
+					<div class="item_right">
+						<span>900</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm9'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>毛巾</p>
+						<p>品牌：洁丽雅</p>
+						<p>型号：6450</p>
+						<p>市场参考价：￥29</p>
+					</div>
+					<div class="item_right">
+						<span>725</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+				<div class="item">
+                    <a href='/comm10'>
+					<div class="item_left"></div>
+					<div class="item_center">
+						<p>B仔(小)</p>
+						<p>品牌：三碧酒店</p>
+						<p>型号：S1</p>
+						<p>市场参考价：￥16</p>
+					</div>
+					<div class="item_right">
+						<span>400</span><em>积分</em>
+					</div>
+                    </a>
+				</div>
+			</div>
+		</div>
+
+<!--
+        <div class='layer' style='display:none'>
+            <h3>请填写您的信息</h3>
+            <div class='frominput'>
+                <label>姓名</label>
+                <input type='text' class='inp' name='username' id='username'>
+            </div>
+            <div class='frominput'>
+                <label>手机</label>
+                <input type='text' class='inp' name='phone' id='phone'>
+            </div>
+            <div class='frominput'>
+                <label>地址</label>
+                <input type='text' class='inp' name='address' id='address'>
+            </div>
+            <p></p>
+            <p></p>
+           <button>提交</button>
+        </div>
+-->
+{% endblock %}

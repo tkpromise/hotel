@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="">
+  <title>三碧酒店</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .info {
+        border: 1px solid red;
+        border-radius: 4px;
+        width: 280px;
+        height: 170px;
+        margin: 20px;
+
+        display: flex;
+        flex-flow:column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .basic-info {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    .basic-info img {
+        height: 70px;
+        width: 70px;
+        border-radius: 40px;
+    }
+
+    .basic-info p {
+        margin-top: 10px;
+        color: #ff417d;
+    }
+
+    .basic-cs {
+        display: flex;
+        flex-flow: row;
+    }
+    
+    .basic-cs p {
+        margin: 2px;
+        color: white;
+    }
+
+    .basic-cs span {
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        background: #ffffff;
+        color: #ff417d;
+        width: 60px;
+        text-align: center;
+    }
+    
+    .basic-go {
+        border: 1px solid;
+        border-radius: 4px;
+
+    }
+
+
+
+
+    .coupon {
+        width: 284px;
+        height: 120px;
+        padding: 16px;
+        margin: 20px;
+        box-sizing: border-box;
+        background: #ff417d;
+        color: white;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn {
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        background: #ffffff;
+        color: #ff417d;
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        text-align: center;
+        outline:none;
+    }
+
+    .coupon-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .coupon-body .price {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .coupon-body .date {
+        color: white;
+        font-size: 14px;
+    }
+
+    .coupon-control {
+        display: flex;
+        align-items: center;
+    }
+
+    body {
+        background: #5eb1f3;
+    }
+
+    a {
+        text-decoration:none
+    }
+  </style>
+</head>
+<body>
+    <div class='info'>
+        <div class='basic-info'>
+            <img src="{{ url_for('static', filename='prophoto.png') }}"/>
+            <p>{{ phone }}</p>
+        </div>
+        <div class='basic-cs'>
+            <p>积分</p>
+            <p>{{ point }}</p>
+            <a href='http://www.tkpromise.com'><span class='basic-go'>去兑换</span></a>
+        </div>
+    </div>
+    <ul>
+        {% for i in mebid %}
+            <li>
+                <div class='coupon'>
+                    <div class='coupon-body'>
+                        <p class='price'>{{ i['Value'] | int }}</p>
+                        <p class='txt'>{{ i['DisTypeName'] }}</p>
+                        <p class='date'>{{ i['BeginDate'] }} - {{ i['EndDate'] }}</p>
+                    </div>
+                    <div class='coupon-control'>
+                        <a href='http://www.3bhotel.com'><div class='btn'>去使用</div></a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

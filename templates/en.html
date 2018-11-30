@@ -1,0 +1,136 @@
+<html>
+<head>
+    <style ref='stylesheet'>
+        .main {
+            width: 100%;
+            height: 100%;
+            background-color: #eb195f;
+        }
+        .logo {
+            color: white;
+            font-size: 0.24rem;
+        }
+        .random {
+            display:flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin:0.32rem 0.64rem;
+        }
+        .title {
+            border: 1px solid gray;
+            font-size: 0.32rem;
+            padding: 0 8px;
+        }
+        .en {
+            font-size: 0.20rem;
+        }
+        .word {
+            border: 1px solid gray;
+            margin-top: 0.32rem;
+            padding: 0.08rem;
+            width: 8rem;
+            height: 2rem;
+            text-align: center;
+			font-size: 0.24rem;
+        }
+        button {
+            margin-top: 0.32rem;
+            width: 1rem;
+            height: 0.40rem;
+			background-color: #eb195f;
+			color: white;
+			font-size: 0.24rem;
+			border: 1px solid gray;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class='main'>
+    <div class='logo'>3BHotel</div>
+    <div class='random'>
+        <div class='title'>英语问答</div>
+        <div class='word' id='img'></div>
+        <button onclick='stop()'>暂停</button>    
+    </div>
+</div>
+</body>
+    <script>
+       	function showimg() {
+		var questions=[
+            '1、生日蛋糕和生日卡片是酒店送给您的生日礼物，祝您生日快乐！',
+            '2、这次入住您将会住多少天？',
+            '3、欢迎光临三碧酒店。我是...（介绍自己的真实姓名），请问怎么称呼您呢？',
+            '4、您想要什么样的房间？单人房还是双人房？',
+            '5、英语对话：问：What time is breakfast served ? ',
+            '6、请把您的护照和信用卡交给我，我帮您办理入住手续。',
+            '7、这是您的房卡和早餐券。请您在这里签个名好吗？',
+            '8、如果您有任何需要，请随时联系我们。',
+            '9、英语对话：问：Where is your hotel？ Is the transportation convenient？',
+            '10、退房时间为中午十二点。',
+            '11、退房时间为中午十二点。您的房间号是九楼的8912室。',
+            '12、先生/女士，不好意思，打搅一下。请问您是要付现金还是刷卡呢？',
+            '13、单间是每天288元。',
+            '14、英语对话： 早餐厅在哪里?     餐厅在6楼（4楼、1楼、7楼，各门店根据实际情况回答）',
+            '15、这是您的护照和信用卡,现在您可以上房间了。希望您在这里居住愉快。',
+        ];
+		var url=questions[Math.floor(Math.random()*questions.length)];
+		document.getElementById('img').innerHTML=url;
+		console.log(url)
+	};
+	var i = setInterval('showimg()',120);
+	
+	function stop() {
+		window.clearInterval(i)
+	}; 
+        
+        // taobao UED 
+        (function flexible (window, document) {
+         var docEl = document.documentElement
+         var dpr = window.devicePixelRatio || 1
+
+         // adjust body font size
+         function setBodyFontSize () {
+           if (document.body) {
+             document.body.style.fontSize = (12 * dpr) + 'px'
+           }
+           else {
+             document.addEventListener('DOMContentLoaded', setBodyFontSize)
+           }
+         }
+         setBodyFontSize();
+
+         // set 1rem = viewWidth / 10
+         function setRemUnit () {
+           var rem = docEl.clientWidth / 10
+           docEl.style.fontSize = rem + 'px'
+         }
+
+         setRemUnit()
+
+         // reset rem unit on page resize
+         window.addEventListener('resize', setRemUnit)
+         window.addEventListener('pageshow', function (e) {
+           if (e.persisted) {
+             setRemUnit()
+           }
+         })
+
+         // detect 0.5px supports
+         if (dpr >= 2) {
+           var fakeBody = document.createElement('body')
+           var testElement = document.createElement('div')
+           testElement.style.border = '.5px solid transparent'
+           fakeBody.appendChild(testElement)
+           docEl.appendChild(fakeBody)
+           if (testElement.offsetHeight === 1) {
+             docEl.classList.add('hairlines')
+           }
+           docEl.removeChild(fakeBody)
+         }
+        } (window, document))
+    </script>
+</html>
